@@ -1,0 +1,44 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner inp =new Scanner(System.in);
+        int n = inp.nextInt();
+        int r = inp.nextInt();
+        
+        long f1 = faca(n);
+        
+        int nmr = n-r;
+        long f2 = facb(nmr);
+        
+        System.out.println(f1/f2);
+    }
+    
+    public static long faca(long n){
+        long pro = 1;
+        if(n==0){
+            return pro;
+        }
+        else{
+        for(int i=1; i<=n; i++){
+        pro *= i;
+        }
+            return pro;
+        }
+    }
+    
+    public static long facb(long nmr){
+        long pro2 = 1;
+        if(nmr==0){
+            return pro2;
+        }
+        else{
+        for(int i=1; i<=nmr; i++){
+        pro2 *= i;
+        }
+            return pro2;
+        }
+    }
+}
