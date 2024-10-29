@@ -1,0 +1,16 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner inp = new Scanner(System.in);
+        int n = inp.nextInt();
+        int i = n;
+        while(i != 0){
+            int num = i%10;
+            System.out.println(num);
+            i/= 10;
+        }
+    }
+}
