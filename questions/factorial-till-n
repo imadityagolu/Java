@@ -1,0 +1,24 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner inp =new Scanner(System.in);
+        int n = inp.nextInt();
+        fac(n);
+    }
+    
+    public static void fac(long n){
+        long pro = 1;
+        if(n==0){
+            System.out.print(pro);
+        }
+        else{
+        for(int i=1; i<=n; i++){
+        pro *= i;
+        }
+        System.out.print(pro);
+        }
+    }
+}
