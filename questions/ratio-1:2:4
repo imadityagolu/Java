@@ -1,0 +1,24 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner inp = new Scanner(System.in);
+        int a = 1;
+        int l = 9;
+        int p = 15;
+        int a2 = a*2;
+        int a4 = a*4;
+        
+        while(a>0){
+            if(a2<=l && a4<=p){
+                System.out.println(a+a2+a4);
+                break;
+            }
+            a = a-1;
+            a2 = a*2;
+            a4 = a*4;
+        }
+    }
+}
