@@ -1,0 +1,18 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner i = new Scanner(System.in);
+        String s = i.next();
+        int placeValue = i.nextInt();
+        int l = s.length();
+        if(l>=placeValue){
+            char ch = s.charAt(placeValue);
+            System.out.println(ch);
+        }else {
+            System.out.println("Small string");
+        }
+    }
+}
