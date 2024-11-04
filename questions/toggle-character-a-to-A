@@ -1,0 +1,22 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner i = new Scanner(System.in);
+        char c = i.next().charAt(0);
+        if(c>='a' && c<='z'){
+            int ch = (int)c;
+            int cov = ch-32;
+            char alp = (char)cov;
+            //ch=(char)(ch-32);
+            System.out.println(alp);
+        }else if(c>='A' && c<='Z'){
+            int ch = (int)c;
+            int cov = ch+32;
+            char alp = (char)cov;
+            System.out.println(alp);
+        }
+    }
+}
