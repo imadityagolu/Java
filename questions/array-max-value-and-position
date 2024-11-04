@@ -1,0 +1,19 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        int arr[] = {10,20,50,30};
+        int len = arr.length;
+        int max = arr[0];
+        int pos = 0;
+        for(int i=1; i<len; i++){
+            if(arr[i]>max){
+            max = arr[i];
+            pos = i;
+            }
+        }
+        System.out.println(max+" present at index "+pos);
+    }
+}
