@@ -1,0 +1,55 @@
+//question--
+Hercy wants to save money for his first car. He puts money in the Gullak bank every day. 
+He starts by putting in 1 dollar on Monday, the first day. Every day from Tuesday to Sunday, 
+he will put in 1 more than the day before. On every subsequent Monday, he will put in 1 more 
+than the previous Monday. Given n, return the total amount of money he will have in 
+the Gullak bank at the end of the nth day.
+
+Input Format
+
+An integer N.
+
+Sample Input 0
+4
+
+Sample Output 0
+10
+
+Explanation 0
+After the 4th day, the total is 1 + 2 + 3 + 4 = 10.
+
+
+
+
+//code--
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static int totalSavings(int n){
+        int totalMoney = 0;
+        int currentAmount = 1; 
+        int fullWeeks = n / 7;
+        int remainingDays = n % 7;
+        for (int i = 0; i < fullWeeks; i++) {
+            for (int j = 0; j < 7; j++) {
+                totalMoney += (currentAmount + j);
+            }
+            currentAmount++;
+        }
+
+        for (int i = 0; i < remainingDays; i++) {
+            totalMoney += (currentAmount + i);
+        }
+
+        return totalMoney;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        scanner.close();
+        System.out.println(totalSavings(n));
+    }
+}
