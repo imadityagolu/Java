@@ -1,4 +1,4 @@
-//input--
+//output--
 xooox                
 oxoxo                
 ooxoo                
@@ -6,7 +6,7 @@ oxoxo
 xooox
 
 
-//output--
+//code--
 import java.io.*;
 import java.util.*;
 
