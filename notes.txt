@@ -1,2 +1,124 @@
 JAVA
 -------------
+#JAVA is a programming language use to create many different types of applications
+* It is a  case sensitive languaga
+* robust and secure
+* it is a collection of framework
+* supports platform independent / cross-platform
+* Object-oriented programming language
+* high-level language
+* follow oops concept
+* multiple reader/user (concurrency)
+* exception handling techniques
+
+# used to create applications like:-
+* web applications (backend)
+-- springboot
+-- node
+* GUI (graphical user interface)
+* android mobile applications
+* desktop applications
+* data structure & algorithms (DSA)
+
+
+
+# Data - collection of raw information (unprocessed)
+
+# Data structure - efficiently storing data so that data retrieval is easy
+* Array and string
+* arraylist and string building
+* linkel list
+* stack, sequence, deque
+* hashmap & heap
+* tree & graphs
+
+# Algorithms - set of instructions/code
+* Two pointer, sliding window
+* greedy algorithms
+* searching & sorting
+* divide & conquer
+* DP
+* Graph algorithms
+
+
+
+
+# syntax:-
+import java.io.*;
+import java.util.*;
+
+public class 'NAME OF FUNCTION' {
+    public static void main(String[] args) {
+--BODY--
+    }
+}
+
+
+
+
+# Data Types:-
+1. Integer (int) 4 bytes - 1,2,-3,...
+2. Character (char) 2 bytes - digit, alphabet, special character, symbole,...
+3. Float (float) 4 bytes - 978.458,...
+4. Double (double) 8 bytes - greater than float
+5. Long (long) 8 bytes - greater than int
+6. Boolean (boolean) 1 bytes - true/false
+
+
+
+# disable code:-
+// - used for single line
+
+/*
+*/ - use for para
+
+
+
+# take input:-
+Scanner 'NAME OF INPUT' = new Scanner(System.in);
+eg:- Scanner s = new Scanner(System.in);
+
+* for Integer value:
+Int 'NAME OF INTEGER' = 'NAME OF INPUT'.nextInt();
+eg:- Int a = s.nextInt();
+
+* for String value: 
+written in double quote eg:- "apple"
+String 'NAME OF STRING' = "...";
+eg:- String accNumber = "Aditya";
+
+
+
+# generate output:-
+System.out.println('NAME OF ASSIGNED INTEGER');
+eg:- System.out.println(a);
+
+
+
+# Defination - int a;
+# Initalization - a=6;
+# Declaration - int a=6;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
