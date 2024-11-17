@@ -1,0 +1,25 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner inp = new Scanner(System.in);
+        int a = inp.nextInt();
+        int b = inp.nextInt();
+        
+        int r = rem(a,b);
+        int q = quo(a,b);
+        System.out.println(q+" "+r);
+    }
+    
+    public static int rem(int a, int b){
+        int r = a%b;
+        return r;
+    }
+    
+    public static int quo(int a, int b){
+        int q = a/b;
+        return q;
+    }
+}
