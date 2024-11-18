@@ -1,0 +1,28 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int n = s.nextInt();
+        for(int i=1; i<=n; i++){
+            int num = s.nextInt();
+            int ck = checkpaml(num);
+            if(ck==num){
+                System.out.println("YES");
+            }else{
+                System.out.println("NO");
+            }
+        }
+    }
+    public static int checkpaml(int n){
+        int rev = 0;
+        while(n!=0){
+        int mod = n%10;
+        rev = rev*10+mod;
+        n /= 10;   
+        }
+        return rev;
+    }
+}
