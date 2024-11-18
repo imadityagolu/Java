@@ -1,0 +1,24 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner inp = new Scanner(System.in);
+        int n = inp.nextInt();
+        for(int i=1; i<=n; i++){
+            int inu = inp.nextInt();
+            qr(inu);
+        }
+    }
+    
+    public static void qr(int n){
+        int rem = 0;
+            while(n>0){
+                rem = n%10;
+                System.out.print(rem);
+                n = n/10;
+            }
+        System.out.println();
+    }
+}
