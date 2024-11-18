@@ -1,0 +1,29 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner p = new Scanner(System.in);
+        int n = p.nextInt();
+        for(int i=0; i<n; i++){
+            int num = p.nextInt();
+            System.out.println(isArmstrong(num));
+        }
+    }
+    public static boolean isArmstrong(int num){
+        int ans = 0;
+        int temp = num;
+        while(num>0){
+            int rem = num%10;
+            ans = ans + (rem*rem*rem);
+            num /= 10;
+        }
+        if(ans==temp){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+}
