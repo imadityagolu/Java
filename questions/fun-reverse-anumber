@@ -1,0 +1,23 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int n = s.nextInt();
+        for(int i=1; i<=n; i++){
+            int p = s.nextInt();
+            System.out.println(rev(p));
+        }
+    }
+    public static int rev(int p){
+        int rev = 0;
+        while(p!=0){
+        int mod = p%10;
+        rev = rev*10+mod;
+        p /= 10;   
+        }
+        return rev;
+    }
+}
