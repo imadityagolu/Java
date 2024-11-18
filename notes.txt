@@ -11,6 +11,8 @@ JAVA
 * multiple reader/user (concurrency)
 * exception handling techniques
 
+
+
 # used to create applications like:-
 * web applications (backend)
 -- springboot
@@ -44,6 +46,7 @@ JAVA
 
 
 # syntax:-
+
 import java.io.*;
 import java.util.*;
 
@@ -78,14 +81,68 @@ public class 'NAME OF FUNCTION' {
 Scanner 'NAME OF INPUT' = new Scanner(System.in);
 eg:- Scanner s = new Scanner(System.in);
 
-* for Integer value:
+
+* for INTEGER value:-
 Int 'NAME OF INTEGER' = 'NAME OF INPUT'.nextInt();
 eg:- Int a = s.nextInt();
 
-* for String value: 
+--built in functions--
+
+@to find length:-
+eg:
+INPUT
+int a = 123456789;
+int 'NAME' = String.valueOf(a).length();
+OUTPUT
+NAME will give 9.
+
+
+
+* for STRING value:- 
 written in double quote eg:- "apple"
 String 'NAME OF STRING' = "...";
 eg:- String accNumber = "Aditya";
+
+--built in functions--
+
+@to find length:-
+eg:
+INPUT
+String a = "Apple";
+int 'NAME' = a.length();
+OUTPUT
+NAME will gite 5.
+
+
+@to generate character at index:-
+eg:
+INPUT
+String n = "jatin";
+char 'NAME' = n.charAt('2');
+OUTPUT
+NMAE will give t.
+
+
+@to take string input:-
+eg:
+INPUT
+Scanner s = new Scanner(System.in);
+String name = s.nextLine();
+OUTPUT
+--compiler will ask to enter string value--
+
+
+
+* for CHARACTER value:-
+--built in functions--
+
+@to take one character input:-
+eg:
+INPUT
+Scanner s = new Scanner(System.in);
+Char a = s.next().charAt(0);
+OUTPUT
+--compiler will ask to enter one character value--
 
 
 
@@ -98,6 +155,154 @@ eg:- System.out.println(a);
 # Defination - int a;
 # Initalization - a=6;
 # Declaration - int a=6;
+
+
+
+
+# Type of operators:-
+1. Arithmetic Operators
+2. Assignment Operators
+3. Urinary Operators
+4. Relational Operators
+5. Terniary operators
+6. Logical operators
+7. Conditional Operators
+
+
+
+
+1. Arithmetic Operators:-
++ - addition
+- - subtraction
+* - multiplication
+/ - division(quotient)
+% - modulus - division(reminder)
+
+
+
+2. Assignment Operators:-
+a=5;
+b=a;
+now b = 5.
+
+
+
+3. Urinary Operators:-
++=
+-=
+*=
+/=
+
+eg: 
+a=5,
+a=a+1 or a += 1; //add 1 to a//
+now a = 6.
+
+
+
+4. Relational Operators:- //used to compare
+x==y = equal to
+x!=y = not equal to
+a > b
+a < b
+a >= b
+a <= b
+
+
+
+5. Terniary Operators:-
+'condition' ? "True" : "False"
+eg: (System.out.println(a>b ? "True" : "False");
+
+
+
+
+6. Logical Operators:-
+&& - and operator
+|| - or operator
+!= - not equals to operator
+
+
+
+7. Conditional Operators:-
+* if condition
+eg:
+if('condition'){
+--body--
+}
+
+
+
+
+* if else condition
+eg:
+if('condition'){
+--body--
+}
+else
+{
+--body--
+}
+
+
+
+
+* if else if condition
+eg:
+if('condition'){
+--body--
+}
+else if
+{
+--body--
+}
+else if
+{
+--body--
+}
+.
+.
+.
+else
+{
+--body--
+}
+
+
+
+
+* Nested if else:- if inside if
+eg:
+if('condition')
+{
+    if('condition'){
+    --body--
+    }
+--body--
+}
+
+
+
+* Switch case
+eg:
+int a = 2;
+switch (a)
+{
+case 1: 
+--body--
+break;
+
+case 2:
+--body--
+break;
+.
+.
+.
+default:
+--body--
+}
+
+
 
 
 
