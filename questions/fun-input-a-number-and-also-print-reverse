@@ -1,0 +1,34 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+         Scanner inp = new Scanner(System.in);
+      int n = inp.nextInt();
+      
+      int numform = num(n, inp);
+      System.out.println(numform);
+      int revnum = reverse(numform);
+      System.out.println(revnum);
+    }
+    
+    public static int num(int n, Scanner inp){
+        int numform = 0;
+        for(int i=1; i<=n; i++){
+            int d = inp.nextInt();
+            numform = numform * 10 + d;
+        }
+        return numform;
+    }
+
+    public static int reverse(int numform){
+        int rev = 0;
+        while(numform!=0){
+            int rem = numform%10;
+            rev = rev * 10 + rem;
+            numform /= 10;
+        }
+        return rev;
+    }
+}
