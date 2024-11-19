@@ -1,0 +1,30 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int n = s.nextInt();
+        for(int i=0; i<n; i++){
+        int x = s.nextInt();
+        int y = s.nextInt();
+        int rlt = gcd(x,y);
+        System.out.println(rlt);
+        } 
+    }
+    
+    public static int gcd(int x, int y){
+        if(y>x){
+            int temp = x;
+            x = y;
+            y = temp;
+        }
+            while(x!=0){
+                int rem = y%x;
+                y = x;
+                x = rem;
+            }
+        return y;
+    }
+}
