@@ -1,0 +1,34 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int n = s.nextInt();
+        int arr[] = new int[n];
+        for(int i=0; i<n; i++){
+            arr[i] = s.nextInt();
+        }
+        
+        int[] rlt = selectionSort(arr,n);
+        for(int i=0; i<rlt.length; i++){
+            System.out.print(rlt[i]+" ");
+        }
+    }
+    
+    public static int[] selectionSort(int[] arr, int n){
+        for(int i=0; i<n-1; i++){
+            int minIndex = i;
+            for(int j=i+1; j<n; j++){
+                if(arr[j]<arr[minIndex]){
+                    minIndex = j;
+                }
+            }
+            int temp = arr[i];
+            arr[i] = arr[minIndex];
+            arr[minIndex] = temp;
+        }
+        return arr;
+    }
+}
