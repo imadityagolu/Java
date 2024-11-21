@@ -644,6 +644,10 @@ in this case "order of n^3" time complexity is taken by the programme
 
 # SORTING : either in Ascending or descending order
 1. Bubble sort : compare 2 adjacent elements
+syntax:
+Arrays.sort(arr); // for ascending order
+Arrays.sort(arr, Collections.reverseOrder()); // for descending order
+
 2. Selection sort : selecting the smallest value and placing it on the 1st index
 3. Insertion sort : assuming that 1st index element is already sorted and others are not
 4. Quick sort
