@@ -26,15 +26,18 @@ JAVA
 
 # Data - collection of raw information (unprocessed)
 
-# Data structure - efficiently storing data so that data retrieval is easy
+# Data structure - way of shorting data or efficiently storing data so that data retrieval is easy
+1. Linear Data Structure
 * Array and string
 * arraylist and string building
 * linkel list
 * stack, sequence, deque
 * hashmap & heap
+
+2. Non-Linear Data structure
 * tree & graphs
 
-# Algorithms - set of instructions/code
+# Algorithms - set of instructions/code to solve a problem
 * Two pointer, sliding window
 * greedy algorithms
 * searching & sorting
@@ -643,6 +646,8 @@ in this case "order of n^3" time complexity is taken by the programme
 1. Bubble sort : compare 2 adjacent elements
 2. Selection sort : selecting the smallest value and placing it on the 1st index
 3. Insertion sort : assuming that 1st index element is already sorted and others are not
+4. Quick sort
+5. Merge sort
 
 
 
