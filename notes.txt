@@ -362,6 +362,75 @@ default:
 
 
 
+# LOOPS :-
+1. for loop
+2. while loop
+3. do-while loop
+4. for-each loop
+
+
+
+1. for loop
+syntax:
+for(initialization; condition; degradation)
+{
+--body--
+}
+
+eg:
+for (int i = 0; i < 5; i++) {
+  System.out.println(i);
+}
+
+
+initialization : assigning the value 
+condition : execute until it is true, otherwise execution will stop (when to stop)
+degradation : by how much we have to move
+
+note: we dont need to set all the 3 parameters of syntax, it will not through any error but it will go till infinity
+
+
+
+
+2. while loop
+syntax:
+int i = ('value');
+while('condition for i')
+{
+--body--
+break; or continue;
+}
+
+eg:
+int i = 0;
+while (i < 5) {
+  System.out.println(i);
+  i++;
+}
+
+
+
+
+3. do-while loop
+syntax:
+do 
+{
+--body--
+}
+while (condition);
+
+eg:
+int i = 0;
+do {
+  System.out.println(i);
+  i++;
+}
+while (i < 5);
+
+
+
+
+
 
 
 
