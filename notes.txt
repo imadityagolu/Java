@@ -419,6 +419,8 @@ do
 }
 while (condition);
 
+note: difference between while and do-while is that at least for one time do-while code will execute because it checks the condition after running one time
+
 eg:
 int i = 0;
 do {
@@ -429,6 +431,218 @@ while (i < 5);
 
 
 
+
+4. for-each loop
+syntax:
+for (type 'variable' : 'Name') {
+--body--
+}
+
+note: for-each condition executes from starting index to ending index for one time each
+
+eg:
+String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+for (String i : cars) {
+  System.out.println(i);
+}
+
+
+
+
+# FUNCTION : it is used not to write a particular note again and again for a particular task
+syntax:
+return_type function_name(parameter_passing)
+{
+--body--
+}
+
+
+
+
+Types of function:-
+1. Parameterised
+2. Non-Parameterised
+
+
+
+
+1. Parameterised : when function needs parameter from the user
+in this case "int / boolean / ect" return types are used
+eg:
+public static int sum(int a, int b)
+{
+int sum = a+b;
+return sum;
+}
+
+@how to call the Parameterised function:-
+int result = function_name('parameters');
+System.out.println(result);
+
+note: Parameterised function should always be called and stored in new variable
+
+
+
+
+2. Non-Parameterised : when function does not needs parameters from the user
+in this case "void" return type is used
+eg:
+public static void greetings()
+{
+System.out.println("Hello");
+}
+
+note: it does not take any paramater and will not return anything just print the function when it is called
+
+@how to call the Non-Parameterised function:-
+function_name();
+
+
+
+# Array : it is a collection of data of similar type of elements 
+to store a particular type of data in a single matrix
+syntax:
+data_type name_of_array[] = new data_type[size_of_array];
+
+eg:1
+int a[] = {1,2,3}
+
+eg:2
+int a[] = new int[3];
+a[0] = 1;
+a[1] = 2;
+a[2] = 3;
+
+To print the declared array:-
+int n = a.length;
+for(int i=0; i<n.length; i++)
+{
+System.out.println(a[i]);
+}
+OUTPUT will be : {1,2,3}
+
+note : in array index starts from 0 and goes till n-1.
+
+you can also input values of array by using loop
+eg:
+Scanner s = new Scanner(System.in)
+int a[] = new int[3];
+for(int i=0; i<2; i++)
+{
+a[i] = s.nextInt();
+}
+
+
+@to pass array in function :-
+
+--main function code--
+int arr[] = {1,2,3};
+int a = sum(arr);
+System.out.println(a);
+
+--sum function code--
+public static int sum(int[] arr)
+{
+int sum = 0;
+    for(int i=0; i<arr.length; i++)
+    {
+    sum += arr[i];
+    }
+return sum;
+}
+
+
+
+@to pass array in function and get array as return :-
+
+--main function code--
+int arr[] = {1,2,3};
+int[] a = add1(arr);
+for(int i=0; i<a.length; i++)
+{
+System.out.println(a[i]);
+}
+
+--sum function code--
+public static int[] add1(int[] arr)
+{
+    for(int i=0; i<arr.length; i++)
+    {
+    arr[i] = arr[i] + 1;
+    }
+return arr;
+}
+
+
+
+
+# Time complexity : time consumed by programme for execution
+1. Best case : if the result gets at the starting of the indexes, referred as "Big omega"
+2. Average case : if the result gets at the middle of the indexes, referred as "Big Theta"
+3. worst case : if the result gets at the ending of the indexes, referred as "Big Oo"
+
+Note: The worst case is always considered to operate on it
+
+
+# defined as per timing :-
+1. Constant time complexity : when for each initialization same time is taken
+eg:
+int a = 1 //1 order
+int b = 69; //2 order
+int c = 100000000000; //3 order
+in this case "order of (3)" / "o(3)" time complexity is taken by the programme because all initialization is constant and takes same time
+
+
+2. Linear time complexity : "order of n" when only 1 time loop executes.
+eg:
+for(int i=0; i<n; i++)
+{
+--body--
+}
+in this case "order of n" time complexity is taken by the programme
+
+
+3. Quadratic time complexity : "order of n^2" when 1 time loop executes under another loop.
+eg:
+for(int i=0; i<n; i++)
+{
+    for(int j=0; j<n; j++)
+    {
+    --body--
+    }
+--body--
+}
+in this case "order of n^2" time complexity is taken by the programme
+
+
+
+3. Cubic time complexity : "order of n^3" when 1 time loop executes under another loop of another loop.
+eg:
+for(int i=0; i<n; i++)
+{
+    for(int j=0; j<n; j++)
+    {
+    --body--
+        for(int j=0; j<n; j++)
+        {
+        --body--
+        }
+    }
+--body--
+}
+in this case "order of n^3" time complexity is taken by the programme
+
+
+
+4. logarithmic time complexity : "order of (log n)"
+
+
+
+
+# SORTING : either in Ascending or descending order
+1. Bubble sort : compare 2 adjacent elements
+2. Selection sort : selecting the smallest value and placing it on the 1st index
+3. Insertion sort : assuming that 1st index element is already sorted and others are not
 
 
 
