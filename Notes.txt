@@ -656,6 +656,51 @@ Arrays.sort(arr, Collections.reverseOrder()); // for descending order
 
 
 
+# COMPARATOR : used for custom sorting, using our own logic to sort.
+it is an interface.
+
+method 1 : custom sorting
+syntax:
+Integer arr[] = new Integer[n]; //use thie integer data type
+public static class 'NAME OF COMPARATOR' implements Comparator <Integer>
+{
+@override
+public int compare(Integer a, Integer b)
+    {
+    return a-b;
+    }
+}
+
+
+method 2 : Lemda function
+syntax:
+
+Integer arr[] = new Integer[n]; //use thie integer data type
+Arrays.sort('NAME OF ARRAY', (a,b)->{return a*a-b*b;});
+
+    note: a-b for ascending order, b-a for descending order.
+
+*its TIME complexicity is 'n Log n' because it uses quick and merge method.
+* +1 = value will be placed first that is ascending order
+* -1 = value will be placed second that is descending order
+
+
+
+# SUBARRAYS : Combination of all the elements of arrays.
+eg:
+{1,2,3}
+its subarrays will be :
+-> 1
+-> 1,2
+-> 1,2,3
+-> 2
+-> 2,3
+
+syntax:
+
+
+
+
 
 
 
