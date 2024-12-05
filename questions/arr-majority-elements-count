@@ -1,0 +1,45 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int n = s.nextInt();
+        int arr[] = new int[n];
+        for(int i=0; i<n; i++){
+            arr[i] = s.nextInt();
+        }
+        Arrays.sort(arr);
+        int threshold = (n+1)/2;
+        
+        int currElem = arr[0], count = 1, majoElem = arr[0];
+        boolean found = false;
+        
+        for(int i=1; i<n; i++){
+            if(arr[i]==currElem){
+                count++;
+            }else{
+                if(count>=threshold){
+                    if(!found || currElem > majoElem){
+                        majoElem = currElem;
+                        found = true;
+                    }
+                }
+                currElem = arr[i];
+                count = 1;
+            }
+        }
+        if(count >= threshold){
+            if(!found || currElem > majoElem){
+                majoElem = currElem;
+                found = true;
+            }
+        }
+                if(found){
+                    System.out.println(majoElem);
+                }else{
+                    System.out.println("NO MAJORITY ELEMENT");
+                }
+        }
+}
