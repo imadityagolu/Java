@@ -21,10 +21,8 @@ public class Solution {
                 count++;
             }else{
                 if(count>=threshold){
-                    if(!found || currElem > majoElem){
                         majoElem = currElem;
                         found = true;
-                    }
                 }
                 currElem = arr[i];
                 count = 1;
