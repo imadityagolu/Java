@@ -717,7 +717,8 @@ syntax:
 
 
 
-
+ONE LINER CODES / SHORT CUTS:
+*to copy exact array --> int exp[] = Arrays.copyOf(arr,n);
 
 
 
