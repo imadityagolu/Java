@@ -1,0 +1,86 @@
+You have a long flowerbed in which some of the plots are planted, and some are not. However, flowers cannot be planted in adjacent plots.
+
+Given an integer array flowerbed containing 0's and 1's, where 0 means empty and 1 means not empty, and an integer k, return if k new flowers can be planted in the flowerbed without violating the no-adjacent-flowers rule.
+
+Input Format
+
+An integer N representing the length of array.
+N integers representing the elements of array.
+An interger K representing the no. of flowers.
+Constraints
+
+1 <= flowerbed.length <= 2 * 104
+
+flowerbed[i] is 0 or 1.
+
+There are no two adjacent flowers in flowerbed.
+
+0 <= n <= flowerbed.length
+
+Output Format
+
+print true or false.
+
+Sample Input 0
+
+5
+1 0 0 0 1
+1
+Sample Output 0
+
+true
+
+
+code:-
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Read the size of the array
+        int n = scanner.nextInt();
+
+        // Read the flowerbed array
+        int[] flowerbed = new int[n];
+        for (int i = 0; i < n; i++) {
+            flowerbed[i] = scanner.nextInt();
+        }
+
+        // Read k
+        int k = scanner.nextInt();
+
+        // Print the result
+        System.out.println(canPlaceFlowers(flowerbed, k));
+
+        scanner.close();
+    }
+    public static boolean canPlaceFlowers(int[] flowerbed, int k) {
+        int count = 0;
+        int n = flowerbed.length;
+
+        for (int i = 0; i < n; i++) {
+            // Check if the current plot and its adjacent plots are empty
+            if (flowerbed[i] == 0 &&
+                (i == 0 || flowerbed[i - 1] == 0) &&
+                (i == n - 1 || flowerbed[i + 1] == 0)) {
+
+                // Place a flower here
+                flowerbed[i] = 1;
+                count++;
+                
+                // If we've placed enough flowers, return true
+                if (count >= k) {
+                    return true;
+                }
+            }
+        }
+
+        // Return true if we could plant at least k flowers, otherwise false
+        return count >= k;
+    }
+}
