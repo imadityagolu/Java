@@ -1,0 +1,94 @@
+Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the non-zero elements.
+
+Note that you must do this in-place without making a copy of the array.
+
+NOTE :- After answering the question, attempt the related question in the linked resource to improve your understanding of this question. Click here
+
+Input Format
+
+An integer T representing no. of test cases.
+An integer number n representing size of array.
+N integer inputs representing elements of array.
+Constraints
+
+1 <= T <= 1000
+1 <= nums.length <= 1000
+-231 <= nums[i] <= 231 - 1
+Output Format
+
+An array with all zeroes at the end.
+
+Sample Input :
+5
+9
+46 0 38 0 6 9 9 15 0
+9
+18 5 29 0 0 0 35 0 16
+7
+25 0 4 0 0 17 0
+6
+8 0 34 0 26 36
+7
+0 46 27 0 0 17 11
+
+
+Sample Output :
+46 38 6 9 9 15 0 0 0 
+18 5 29 35 16 0 0 0 0 
+25 4 17 0 0 0 0 
+8 34 26 36 0 0 
+46 27 17 11 0 0 0 
+
+
+
+
+code:-
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Read the number of test cases
+        int testCases = scanner.nextInt();
+
+        // Process each test case
+        for (int t = 0; t < testCases; t++) {
+            // Read the size of the array
+            int size = scanner.nextInt();
+
+            // Initialize the array and read its elements
+            int[] nums = new int[size];
+            for (int i = 0; i < size; i++) {
+                nums[i] = scanner.nextInt();
+            }
+
+            // Call the moveZeroes function to process the array
+            moveZeroes(nums);
+
+            // Print the modified array
+            for (int num : nums) {
+                System.out.print(num + " ");
+            }
+            System.out.println();
+        }
+
+        scanner.close();
+    }
+     public static void moveZeroes(int[] nums) {
+        int nonZeroIndex = 0;
+
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != 0) {
+                nums[nonZeroIndex] = nums[i];
+                if (i != nonZeroIndex) {
+                    nums[i] = 0;
+                }
+                nonZeroIndex++;
+            }
+        }
+    }
+}
