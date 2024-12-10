@@ -1,0 +1,38 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int n = s.nextInt();
+        int arr[] = new int[n];
+        for(int i=0; i<n; i++){
+            arr[i] = s.nextInt();
+        }
+        int k = s.nextInt();
+        Arrays.sort(arr);
+        reachTarger(arr,n,k);
+    }
+    public static void reachTarger(int[] arr, int n, int k){
+        int l = 0;
+        int r = n-1;
+        while(l<r){
+            if(arr[l]+arr[r]==k){
+                System.out.println(arr[l]+" "+arr[r]);
+                while(arr[l]==arr[l+1]){
+                    l++;
+                }
+                while(arr[r]==arr[r-1]){
+                    r--;
+                }
+                l++;
+                r--;
+            }else if(arr[l]+arr[r]>k){
+                r--;
+            }else{
+                l++;
+            }
+        }
+    }
+}
