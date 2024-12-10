@@ -1,0 +1,41 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int N = scanner.nextInt();
+        int[] arr = new int[N];
+        for (int i = 0; i < N; i++) {
+            arr[i] = scanner.nextInt();
+        }
+
+        sortBoxes(arr);
+        for (int i = 0; i < N; i++) {
+            System.out.print(arr[i] + " ");
+        }
+    }
+    public static void sortBoxes(int[] arr) {
+        int left = 0, right = arr.length - 1;
+
+        while (left < right) {
+            // If the left pointer is at 0, move it to the right
+            if (arr[left] == 0) {
+                left++;
+            }
+            // If the right pointer is at 1, move it to the left
+            else if (arr[right] == 1) {
+                right--;
+            }
+            // Swap 1 from the left with 0 from the right
+            else {
+                int temp = arr[left];
+                arr[left] = arr[right];
+                arr[right] = temp;
+                left++;
+                right--;
+            }
+        }
+    }
+}
