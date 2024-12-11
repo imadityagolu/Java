@@ -1,0 +1,46 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int n = s.nextInt();
+        int arr[] = new int[n];
+        for(int i=0; i<n; i++){
+            arr[i] = s.nextInt();
+        }
+        prefixSum(arr,n);
+    }
+    public static void prefixSum(int arr[], int n){
+        int prefix[] = new int[n];
+        prefix[0] = arr[0];
+        for(int i=1; i<n; i++){
+            prefix[i] = prefix[i-1]+arr[i];
+        }
+            boolean haspivot = false;
+            for(int i=0; i<n; i++){
+                int leftsum = 0, rightsum = 0;
+                if(i==0){
+                    leftsum=0;
+                }
+                else{
+                    leftsum = prefix[i-1];
+                }
+                if(i==n-1){
+                    rightsum=0;
+                }
+                else{
+                    rightsum = prefix[n-1]-prefix[i];
+                }
+                if(leftsum==rightsum){
+                    System.out.println(i);
+                    haspivot=true;
+                    break;
+                }
+            }
+            if(haspivot == false){
+                System.out.println(-1);
+            }
+    }
+}
