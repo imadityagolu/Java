@@ -1,0 +1,56 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int n = s.nextInt();
+        int arr[] = new int[n];
+        for(int i=0; i<n; i++){
+            arr[i] = s.nextInt();
+        }
+        int cA = s.nextInt();
+        int cB = s.nextInt();
+        planting(arr,n,cA,cB);
+    }
+    
+    public static void planting(int[] plant, int n, int cA, int cB){
+        int l = 0;
+        int r = n-1;
+        int a = cA;
+        int b = cB;
+        int refil = 0;
+        
+        while(l<r){
+            if(l==r){
+                if(a>=b){
+                    if(a<plant[l]){
+                        refil++;
+                    }
+                }
+                else{
+                    if(b<plant[l]){
+                        refil++;
+                    }
+                }
+                break;
+            }
+            
+            if(a<plant[l]){
+                a = cA;
+                refil++;
+            }
+            a -= plant[l];
+            l++;
+            
+            if(b<plant[r]){
+                b = cB;
+                refil++;
+            }
+            b -= plant[r];
+            r--;
+        }
+        System.out.println(refil);
+    }
+}
