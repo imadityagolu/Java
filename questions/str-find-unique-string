@@ -1,0 +1,26 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        String str = s.nextLine();
+        
+        char dig[] = str.toCharArray();
+        
+        Arrays.sort(dig);
+        
+        int unicount = 1;
+        
+        for(int i=0; i<dig.length-1; i++){
+            if(dig[i] == dig[i+1]){
+                continue;
+            }
+            else{
+                unicount++;
+            }
+        }
+        System.out.println(unicount);
+    }
+}
