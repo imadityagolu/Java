@@ -1,0 +1,25 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int n = s.nextInt();
+        int freq[] = new int[10];
+        while(n>0){
+            int digit = n%10;
+            freq[digit]++;//to store value in arr
+            n/=10;
+        }
+        int maxfreq = 0;
+        int maxfreqdigit = 0;
+        for(int i=0; i<10; i++){
+            if(freq[i]>maxfreq){
+                maxfreq = freq[i];
+                maxfreqdigit = i;
+            }
+        }
+        System.out.println(maxfreqdigit);
+    }
+}
