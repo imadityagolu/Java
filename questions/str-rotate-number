@@ -1,0 +1,27 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int n = s.nextInt();
+        int k = s.nextInt();
+        System.out.println(rotate(n,k));
+    }
+    public static String rotate(int j, int k) {
+        //convert integer to string
+        String n = Integer.toString(j);
+        int length = n.length();
+
+        k = k % length;
+        if (k < 0) {
+            k += length;
+        }
+
+        // Perform the rotation
+        String rotated = n.substring(k) + n.substring(0,k);
+
+        return rotated;
+    }
+}
