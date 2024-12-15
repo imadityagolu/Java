@@ -48,30 +48,27 @@ import java.util.*;
 public class Solution {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        // Input array size
-        int n = scanner.nextInt();
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
         int[] arr = new int[n];
-
-        // Input array elements
         for (int i = 0; i < n; i++) {
-            arr[i] = scanner.nextInt();
+            arr[i] = sc.nextInt();
         }
-
-        // HashMap to count occurrences of each element
-        HashMap<Integer, Integer> countMap = new HashMap<>();
-
-        for (int num : arr) {
-            countMap.put(num, countMap.getOrDefault(num, 0) + 1);
-            // If any element occurs thrice, print true and exit
-            if (countMap.get(num) == 3) {
-                System.out.println("true");
-                return;
+        HashMap<Integer, Integer> frequencyMap = new HashMap<>();
+        for (int i = 0; i < n; i++) {
+            frequencyMap.put(arr[i], frequencyMap.getOrDefault(arr[i], 0) + 1);
+        }
+        boolean found = false;
+        for (int count : frequencyMap.values()) {
+            if (count == 3) {
+                found = true;
+                break;
             }
         }
-
-        // If no element occurs thrice, print false
-        System.out.println("false");
+        if (found) {
+            System.out.println("true");
+        } else {
+            System.out.println("false");
+        }
     }
 }
