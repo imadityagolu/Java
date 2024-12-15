@@ -1,0 +1,93 @@
+You are given two matrices , your task is to subtract the given matrices , and then print the resultant matrix using tab spaces.
+
+Input Format
+
+First line contains, m1 and n1 depicting the size of first matrix.
+m1*n1 Integer values, depicting all the elements of matrix.
+Third line contains, m2 and n2 depicting the size of second matrix.
+m2*n2 Integer values, depicting all the elements of matrix.
+Constraints
+
+1 <= m1 and n1 <=1000
+
+1<=m2 and n2<=1000
+
+-1000<=mat[i][j]<=1000
+
+Output Format
+
+Print the resultant matrix.
+
+Sample Input 0
+
+3
+3
+4 9 5
+0 1 0
+9 4 2
+3
+3
+3 8 7
+5 9 7
+1 6 1
+Sample Output 0
+
+1   1   -2    
+-5   -8   -7    
+8   -2   1  
+Explanation 0
+
+Print the matrix after subtracting
+
+
+code:-
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input for the first matrix
+        int m1 = scanner.nextInt();
+        int n1 = scanner.nextInt();
+        int[][] matrix1 = new int[m1][n1];
+        for (int i = 0; i < m1; i++) {
+            for (int j = 0; j < n1; j++) {
+                matrix1[i][j] = scanner.nextInt();
+            }
+        }
+
+        // Input for the second matrix
+        int m2 = scanner.nextInt();
+        int n2 = scanner.nextInt();
+        int[][] matrix2 = new int[m2][n2];
+        for (int i = 0; i < m2; i++) {
+            for (int j = 0; j < n2; j++) {
+                matrix2[i][j] = scanner.nextInt();
+            }
+        }
+
+        // Subtract matrices
+        int[][] resultMatrix = new int[m1][n1];
+        for (int i = 0; i < m1; i++) {
+            for (int j = 0; j < n1; j++) {
+                resultMatrix[i][j] = matrix1[i][j] - matrix2[i][j];
+            }
+        }
+
+        // Print the resultant matrix
+        for (int i = 0; i < m1; i++) {
+            for (int j = 0; j < n1; j++) {
+                System.out.print(resultMatrix[i][j]);
+                if (j < n1 - 1) {
+                    System.out.print("   ");
+                }
+            }
+            System.out.println();
+        }
+    }
+}
