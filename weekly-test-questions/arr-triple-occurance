@@ -1,0 +1,77 @@
+Take an array of size n with integer elements. And Print “true” if the array contains an element that occurs thrice and print “false” if the array otherwise.
+
+Input Format
+
+An integer number n representing size of array.
+
+N integer inputs representing elements of array.
+
+Constraints
+
+1<=n<=100000
+
+-100000<=arr[i]<=100000
+
+Output Format
+
+Boolean Value
+
+Sample Input 0
+
+7
+1 1 2 2 3 3 3
+Sample Output 0
+
+true
+Explanation 0
+
+element 3 has occured three time.
+
+Sample Input 1
+
+5
+1
+1
+1
+1
+1
+Sample Output 1
+
+false
+
+
+code:-
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input array size
+        int n = scanner.nextInt();
+        int[] arr = new int[n];
+
+        // Input array elements
+        for (int i = 0; i < n; i++) {
+            arr[i] = scanner.nextInt();
+        }
+
+        // HashMap to count occurrences of each element
+        HashMap<Integer, Integer> countMap = new HashMap<>();
+
+        for (int num : arr) {
+            countMap.put(num, countMap.getOrDefault(num, 0) + 1);
+            // If any element occurs thrice, print true and exit
+            if (countMap.get(num) == 3) {
+                System.out.println("true");
+                return;
+            }
+        }
+
+        // If no element occurs thrice, print false
+        System.out.println("false");
+    }
+}
