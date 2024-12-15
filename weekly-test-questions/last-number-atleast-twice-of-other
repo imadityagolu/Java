@@ -1,0 +1,83 @@
+You are given an integer array nums where the largest integer is unique.
+
+Determine whether the largest element in the array is at least twice as much as every other number in the array. If it is, return the index of the largest element, or return -1 otherwise.
+
+Input Format
+
+First line contains an integer n.
+
+Second line contains an array of integers of size n.
+
+Constraints
+
+2 <= nums.length <= 50
+
+0 <= nums[i] <= 100
+
+The largest element in nums is unique.
+
+Output Format
+
+Return an integer.
+
+Sample Input 0
+
+4
+3 6 1 0
+Sample Output 0
+
+1
+Explanation 0
+
+6 is the largest integer.
+
+For every other number in the array x, 6 is at least twice as big as x.
+
+The index of value 6 is 1, so we return 1.
+
+
+
+code:-
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input size of the array
+        int n = scanner.nextInt();
+        int[] nums = new int[n];
+
+        // Input array elements
+        for (int i = 0; i < n; i++) {
+            nums[i] = scanner.nextInt();
+        }
+
+        // Initialize variables to find the largest and second largest elements
+        int maxIndex = 0;
+        int max = nums[0];
+        int secondMax = Integer.MIN_VALUE;
+
+        // Traverse the array to find the largest and second largest elements
+        for (int i = 1; i < n; i++) {
+            if (nums[i] > max) {
+                secondMax = max;
+                max = nums[i];
+                maxIndex = i;
+            } else if (nums[i] > secondMax) {
+                secondMax = nums[i];
+            }
+        }
+
+        // Check if the largest element is at least twice as large as the second largest
+        if (max >= 2 * secondMax) {
+            System.out.println(maxIndex);
+        } else {
+            System.out.println(-1);
+        }
+    }
+}
