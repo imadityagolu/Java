@@ -1,0 +1,41 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        char ch = s.next().charAt(0);
+        int n = s.nextInt();
+        char[] arr = new char[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = s.next().charAt(0);
+        }
+
+        char result = findchar(arr, ch);
+        
+        if (result == '#') {
+            System.out.println(-1);
+        } else {
+            System.out.println(result);
+        }
+    }
+
+    private static char findchar(char[] arr, char ch) {
+        int left = 0;
+        int right = arr.length - 1;
+        char nextGreater = '#';
+
+        while (left <= right) {
+            int mid = (left + right) / 2;
+
+            if (arr[mid] <= ch) {
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+                nextGreater = arr[mid];
+            }
+        }
+        return nextGreater;
+    }
+}
