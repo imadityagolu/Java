@@ -1,0 +1,58 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+        int N = scanner.nextInt();
+        int[][] matrix = new int[N][N];
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+                matrix[i][j] = scanner.nextInt();
+            }
+        }
+
+        // Check if all rows are circular rotations of each other
+        if (areRowsCircularRotations(matrix, N)) {
+            System.out.println("YES");
+        } else {
+            System.out.println("NO");
+        }
+    }
+
+    public static boolean areRowsCircularRotations(int[][] matrix, int N) {
+        // Create a reference array by duplicating the first row
+        int[] reference = new int[2 * N];
+        for (int i = 0; i < N; i++) {
+            reference[i] = matrix[0][i];
+            reference[i + N] = matrix[0][i];
+        }
+
+        // Check all other rows
+        for (int i = 1; i < N; i++) {
+            if (!isCircularRotation(reference, matrix[i], N)) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public static boolean isCircularRotation(int[] reference, int[] row, int N) {
+        // Iterate through the reference array to find a match for the row
+        for (int i = 0; i < N; i++) {
+            boolean match = true;
+            for (int j = 0; j < N; j++) {
+                if (reference[i + j] != row[j]) {
+                    match = false;
+                    break;
+                }
+            }
+            if (match) {
+                return true;
+            }
+        }
+        return false;
+    }
+}
