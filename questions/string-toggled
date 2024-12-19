@@ -1,0 +1,32 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String s1 = scanner.nextLine();
+        String s2 = scanner.nextLine();
+        System.out.println(isToggle(s1, s2));
+    }
+
+    public static boolean isToggle(String s1, String s2) {
+        // If lengths are not equal, they can't be toggles
+        if (s1.length() != s2.length()) {
+            return false;
+        }
+
+        // Check each character for toggle condition
+        for (int i = 0; i < s1.length(); i++) {
+            char c1 = s1.charAt(i);
+            char c2 = s2.charAt(i);
+
+            // Check if characters are toggles
+            if (!(Character.isUpperCase(c1) && Character.toLowerCase(c1) == c2 ||
+                  Character.isLowerCase(c1) && Character.toUpperCase(c1) == c2)) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
