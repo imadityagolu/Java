@@ -1,0 +1,38 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int M = scanner.nextInt();
+        int N = scanner.nextInt();
+        int[][] matrix = new int[M][N];
+        for (int i = 0; i < M; i++) {
+            for (int j = 0; j < N; j++) {
+                matrix[i][j] = scanner.nextInt();
+            }
+        }
+
+        // Interchange the first and last rows
+        interchange(matrix, M, N);
+
+        // Print the updated matrix
+        for (int i = 0; i < M; i++) {
+            for (int j = 0; j < N; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void interchange(int[][] matrix, int M, int N) {
+        if (M > 1) {
+            for (int j = 0; j < N; j++) {
+                int temp = matrix[0][j];
+                matrix[0][j] = matrix[M - 1][j];
+                matrix[M - 1][j] = temp;
+            }
+        }
+    }
+}
