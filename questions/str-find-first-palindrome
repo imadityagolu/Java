@@ -1,0 +1,38 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int n = s.nextInt();
+        s.nextLine();
+        String words[] = new String[n];
+        for(int i=0; i<n; i++){
+            words[i] = s.next();
+        }
+        System.out.println(palindrome(words));
+    }
+    
+    public static String palindrome(String words[]){
+        for(int i=0; i<words.length; i++){
+            if(is(words[i])){
+                return words[i];
+            }
+        }
+        return "empty";
+    }
+    
+    public static boolean is(String words){
+        int left = 0;
+        int right = words.length()-1;
+        while(left<right){
+            if(words.charAt(left)!=words.charAt(right)){
+                return false;
+            }
+            left++;
+            right--;
+        }
+        return true;
+    }
+}
