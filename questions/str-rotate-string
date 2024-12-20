@@ -1,0 +1,14 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        String input = s.next();
+        for (int i=input.length(); i>0; i--) {
+        String rotated = input.substring(i)+input.substring(0, i);
+        System.out.println(rotated);
+        }
+    }
+}
