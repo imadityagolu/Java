@@ -1,0 +1,28 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        String str = s.nextLine();
+        System.out.println(findDigit(str));
+    }
+    public static int findDigit(String str){
+        int n = str.length();
+        int count = 0 ;
+        boolean isNumber = false;
+        for(int i=0; i<n; i++){
+            if(Character.isDigit(str.charAt(i))){
+                if(!isNumber){
+                    count++;
+                    isNumber = true;
+                }
+            }
+            else{
+                isNumber = false;
+            }
+        }
+        return count;
+    }
+}
