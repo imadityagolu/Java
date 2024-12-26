@@ -1,0 +1,33 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        String str = s.nextLine();
+        System.out.println(reverse(str));
+    }
+    public static String reverse(String str){
+        String words[] = str.split(" ");
+        String result = "";
+        for(int i=0; i<words.length; i++){
+            String ch = words[i];
+            result += reverseString(ch) + " ";
+        }
+        return result.trim();
+    }
+    public static String reverseString(String word){
+        char ch[] = word.toCharArray();
+        int left = 0;
+        int right = word.length() - 1;
+        while(left<right){
+                char temp = ch[left];
+                ch[left] = ch[right];
+                ch[right] = temp;
+                left++;
+                right--;
+        }
+        return new String(ch);
+    }
+}
