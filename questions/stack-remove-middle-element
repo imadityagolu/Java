@@ -1,0 +1,33 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int n = s.nextInt();
+        
+        Stack<Integer> stc = new Stack<>();
+        for(int i=0; i<n; i++){
+            stc.push(s.nextInt());
+        }
+        
+        int mid = n/2;
+        
+        Stack<Integer> temp = new Stack<>();
+        for(int i=0; i<mid; i++){
+            temp.push(stc.pop());
+        }
+        
+        stc.pop();
+        
+        while(!temp.isEmpty()){
+            stc.push(temp.pop());
+        }
+        
+        List<Integer> r = new ArrayList<>(stc);
+        for(int i : r){
+            System.out.print(i+" ");
+        }
+    }
+}
