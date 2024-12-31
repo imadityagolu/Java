@@ -1,0 +1,30 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        String str = s.next();
+        System.out.println(parentheses(str));
+    }
+    public static int parentheses(String str){
+        int count = 0;
+        char ch[] = str.toCharArray();
+        Stack<Integer> st = new Stack<>();
+        for(int c : ch){
+            if(c == '('){
+                st.push(c);
+            }
+            else{
+                if(!st.isEmpty() && st.peek()=='('){
+                    st.pop();
+                }
+                else{
+                    count++;
+                }
+            }
+        }
+        return st.size() + count;
+    }
+}
