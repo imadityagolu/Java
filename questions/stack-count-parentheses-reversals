@@ -1,0 +1,41 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        System.out.println(reversal(str));
+    }
+    public static int reversal(String s){
+        int len = s.length();
+        if(len%2 != 0){
+            return -1;
+        }
+        Stack<Character> st = new Stack<>();
+        for(char c : s.toCharArray()){
+            if(c=='{'){
+                st.push(c);
+            }
+            else{
+                if(!st.isEmpty() && st.peek() == '{'){
+                    st.pop();
+                }
+                else{
+                    st.push(c);
+                }
+            }
+        }
+        int opencount = 0, closecount = 0;
+        while(!st.isEmpty()){
+            if(st.pop()=='{'){
+                opencount++;
+            }
+            else{
+                closecount++;
+            }
+        }
+        return (opencount+1)/2 + (closecount+1)/2;
+    }
+}
