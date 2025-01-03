@@ -1,0 +1,36 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        String s = scanner.nextLine();
+
+        String result = removeOuterParentheses(s);
+        System.out.println(result);
+    }
+    
+    public static String removeOuterParentheses(String s) {
+        StringBuilder result = new StringBuilder();
+        Stack<Character> stack = new Stack<>();
+
+        for (char ch : s.toCharArray()) {
+            if (ch == '(') {
+                // Only add to result if it's not the outermost '('
+                if (!stack.isEmpty()) {
+                    result.append(ch);
+                }
+                stack.push(ch);
+            } else if (ch == ')') {
+                stack.pop();
+                // Only add to result if it's not the outermost ')'
+                if (!stack.isEmpty()) {
+                    result.append(ch);
+                }
+            }
+        }
+        return result.toString();
+    }
+}
