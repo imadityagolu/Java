@@ -1,0 +1,68 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int m = sc.nextInt();
+        int n = sc.nextInt();
+        int k = sc.nextInt();
+
+        int[][] mat = new int[m][n];
+
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                mat[i][j] = sc.nextInt();
+            }
+        }
+
+        int[] result = kWeakestRows(mat, k);
+
+        for (int i = 0; i < result.length; i++) {
+            System.out.print(result[i]);
+            if (i < result.length - 1) {
+                System.out.print(" ");
+            }
+        }
+    }
+
+    public static int[] kWeakestRows(int[][] mat, int k) {
+        
+        List<int[]> rows = new ArrayList<>();
+
+        for (int i = 0; i < mat.length; i++) {
+            int soldierCount = countSoldiers(mat[i]);
+            rows.add(new int[]{soldierCount, i});
+        }
+
+        // Sort the rows based on soldier count and then by index
+        rows.sort((a, b) -> {
+            if (a[0] != b[0]) {
+                return Integer.compare(a[0], b[0]);
+            }
+            return Integer.compare(a[1], b[1]);
+        });
+
+        // Extract the indices of the k weakest rows
+        int[] weakestRows = new int[k];
+        for (int i = 0; i < k; i++) {
+            weakestRows[i] = rows.get(i)[1];
+        }
+
+        return weakestRows;
+    }
+
+    private static int countSoldiers(int[] row) {
+        int count = 0;
+        for (int val : row) {
+            if (val == 1) {
+                count++;
+            } else {
+                break; // Stop counting when a civilian (0) is encountered
+            }
+        }
+        return count;
+    }
+}
