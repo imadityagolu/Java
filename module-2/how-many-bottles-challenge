@@ -1,0 +1,31 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int numBottles = sc.nextInt();
+        int numExchange = sc.nextInt();
+
+        System.out.println(maxBottles(numBottles, numExchange));
+    }
+
+    public static int maxBottles(int numBottles, int numExchange) {
+        int totalDrunk = 0;
+        int emptyBottles = 0;
+
+        while (numBottles > 0) {
+            // Drink all the full bottles
+            totalDrunk += numBottles;
+            emptyBottles += numBottles;
+
+            // Exchange empty bottles for full ones
+            numBottles = emptyBottles / numExchange;
+            emptyBottles = emptyBottles % numExchange;
+        }
+
+        return totalDrunk;
+    }
+}
