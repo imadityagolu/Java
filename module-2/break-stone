@@ -1,0 +1,30 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+
+        // Read the stones into a priority queue (max-heap)
+        PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
+        for (int i = 0; i < n; i++) {
+            maxHeap.add(sc.nextInt());
+        }
+
+        // Process the stones
+        while (maxHeap.size() > 1) {
+            int stone1 = maxHeap.poll(); // Heaviest stone
+            int stone2 = maxHeap.poll(); // Second heaviest stone
+
+            if (stone1 != stone2) {
+                maxHeap.add(stone1 - stone2);
+            }
+        }
+
+        // Output the last remaining stone or 0 if none
+        System.out.println(maxHeap.isEmpty() ? 0 : maxHeap.poll());
+    }
+}
