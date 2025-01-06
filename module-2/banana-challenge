@@ -1,0 +1,46 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int N = sc.nextInt();
+
+        int[] piles = new int[N];
+        for (int i = 0; i < N; i++) {
+            piles[i] = sc.nextInt();
+        }
+
+        int h = sc.nextInt();
+
+        System.out.println(minEatingSpeed(piles, h));
+    }
+
+    public static int minEatingSpeed(int[] piles, int h) {
+        int left = 1;
+        int right = Arrays.stream(piles).max().getAsInt();
+        int result = right;
+
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            if (canEatAll(piles, h, mid)) {
+                result = mid;
+                right = mid - 1;
+            } else {
+                left = mid + 1;
+            }
+        }
+
+        return result;
+    }
+
+    private static boolean canEatAll(int[] piles, int h, int k) {
+        int hours = 0;
+        for (int pile : piles) {
+            hours += (pile + k - 1) / k; // Equivalent to Math.ceil(pile / k)
+        }
+        return hours <= h;
+    }
+}
